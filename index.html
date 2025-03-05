@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Lélekmorzsák - Novellák és elbeszélések a vidéki életről és gyermekkor élményeiről.">
+    <title>Lélekmorzsák</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f4f1e1;
+            color: #3e2c1c;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: #7e5a3c;
+            color: #fff;
+            text-align: center;
+            padding: 15px 10px;
+            border-bottom: 4px solid #4e3629;
+        }
+
+        header h1 {
+            font-size: 2em;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1em;
+            font-style: italic;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .story {
+            margin-bottom: 20px;
+            padding: 12px;
+            border-bottom: 2px solid #7e5a3c;
+        }
+
+        .story h2 {
+            font-size: 1.5em;
+            font-family: 'Times New Roman', serif;
+            color: #7e5a3c;
+            margin-bottom: 10px;
+        }
+
+        .story h2 .number {
+            color: #5a4a3c;
+            /* Sötétebb árnyalat a sorszámhoz */
+        }
+
+        .story p {
+            font-size: 0.95em;
+            margin-bottom: 6px;
+        }
+
+        .story .short-text {
+            display: block;
+        }
+
+        .story .full-text {
+            display: none;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+
+        .story a {
+            color: #7e5a3c;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .story a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #7e5a3c;
+            color: white;
+            padding: 10px 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            font-size: 0.95em;
+            margin: 0;
+        }
+
+        /* Reszponzív módosítások */
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 0.9em;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .story h2 {
+                font-size: 1.3em;
+            }
+
+            .story p {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Kisebb mobil eszközökhöz */
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.4em;
+            }
+
+            footer p {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+    <script>
+        function toggleText(link) {
+            var storySection = link.closest('.story');
+            var shortText = storySection.querySelector('.short-text');
+            var fullText = storySection.querySelector('.full-text');
+
+            if (fullText.style.display === "none" || fullText.style.display === "") {
+                shortText.style.display = "none";
+                fullText.style.display = "block";
+                link.textContent = "Kevesebb olvasása...";
+            } else {
+                shortText.style.display = "block";
+                fullText.style.display = "none";
+                link.textContent = "Tovább olvasom...";
+            }
+        }
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lélekmorzsák - Elbeszélések, novellák Vargáné Balogh Irén tollából">
+    <title>Lélekmorzsák</title>
+    <style>
+        /* Alapstílusok */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #7b5e3a;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-bottom: 3px solid #5a4428;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 700px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .story {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .story:hover {
+            transform: translateY(-3px);
+        }
+
+        .story h2 {
+            font-size: 1.5em;
+            color: #5a4428;
+            margin-bottom: 10px;
+        }
+
+        .story .short-text {
+            font-size: 0.9em;
+        }
+
+        .story .full-text {
+            display: none;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .story a {
+            color: #7b5e3a;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .story a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #7b5e3a;
+            color: white;
+            padding: 10px;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+    <script>
+        function toggleText(link) {
+            var storySection = link.closest('.story');
+            var shortText = storySection.querySelector('.short-text');
+            var fullText = storySection.querySelector('.full-text');
+
+            if (fullText.style.display === "none" || fullText.style.display === "") {
+                shortText.style.display = "none";
+                fullText.style.display = "block";
+                link.textContent = "Kevesebb olvasása...";
+            } else {
+                shortText.style.display = "block";
+                fullText.style.display = "none";
+                link.textContent = "Tovább olvasom...";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Lélekmorzsák</h1>
+        <p>Elbeszélések, novellák Vargáné Balogh Irén tollából</p>
+    </header>
+
+    <div class="container" id="tortenetek">
+
+        <!-- Történet 1 -->
+        <section class="story">
+            <h2><span class="number">1.</span> “Ki gépen száll fölébe, annak térkép e táj” /A Hortobágy Kapuja/</h2>
+            <div class="short-text">
+                <p>Gyerekként, a Hortobágy kapujában” felnőni különös elrendeltetése és kiváltsága volt a sorsnak. Erre,
+                    meg persze sok másra is, csak később jön rá az ember,
+                </p>
+            </div>
+            <p><a href="javascript:void(0);" onclick="toggleText(this)">Tovább olvasom...</a></p>
+            <div class="full-text">
+                <p>Gyerekként, a <strong>„Hortobágy kapujában”</strong> felnőni különös elrendeltetése és kiváltsága
+                    volt a sorsnak. Erre, meg persze sok másra is, csak később jön rá az ember, hogy ez tényleg az volt.
+                    A <strong>„Hortobágy kapuja”</strong> nekem valami misztikus dolognak, valami megfoghatatlannak
+                    tűnt, olyannak, amit tudnom kéne, de nem láthatok, mert engem oda nem vittek el, kicsi voltam.</p>
+
+                <p>Azt tudtam, hogy ami mögötte van, nagy, és hogy nagyon, nagyon messze lehet ellátni úgy, hogy nincs
+                    egy fa, egy domb, meg persze, egy hegy se. Amikor kimentünk a falu szélére az utcabéli gyerekekkel,
+                    ott is láthattuk a szikes síkságot,
+                    a lápos talaj mezei növényeit, a nádast, a buzogányt, amit a földhöz verdestünk, és az orrunk, szánk
+                    teliszállt a felszálló pihékkel, miközben hatalmasat kacagtunk.
+                </p>
+
+                <p>A gát oldalban a sok sóvirágot, pitypangot, szappanvirágot és pipacsot, de valahogy az elvágyódás
+                    oda, arra a Hortobágyra, na az igen erős volt bennem. Mert ha én itt lakom, itt élek a kapujában,
+                    tudni szeretném, hogy mi is van bentebb.</p>
+
+                <p>Aztán ott volt még a <strong>Hortobágyi Halastó</strong>, amiről gyakran hallottam édesapámtól, mert
+                    oda jártak halászni sok éven át. Mennyi hal lehet abban a tóban? És mekkorák lehetnek? Milyen nagy
+                    lehet az a tó? Apám azt mondta, hatalmas,
+                    teli madarakkal, és mindenféle hallal.</p>
+
+                <p>8-10 éves fejjel az, hogy valami akkora, amire apám azt mondja, hogy hatalmas, no az az én
+                    képzeletemben valami végtelen víznek tünt. Mert az, hogy tó, az nem mond semmit, amíg nem látja azt
+                    az ember. A kíváncsiság annyira erős volt bennem,
+                    de sose mehettem el oda, mert apám mindig korán kelt, hamar elindult és mindig későn ért haza onnan.
+                    Így engem sose vitt el, viszont amikor halat hozott, no, az volt a boldogság.</p>
+
+                <p>De a sors letekintett rám, és megengedte nekem, hogy láthassam ezt a végtelen rónaságot, ha máshogy
+                    nem is, de a vonatablakból. Az orrom rászorítottam az ablakra, a lehelletemtől teljesen
+                    bepárásodott, amire az ujjammal apró szíveket rajzoltam.
+                    Mamám azt mondta, üljek le, ne rendetlenkedjek, aztán a kezembe nyomott egy mézespuszedlit, amit a
+                    füredi állomás trafikjában vett nekem az útra.</p>
+
+                <p>Merthogy nagyanyám Debrecenben lakott, és volt, hogy nála nyaraltam pár napot, lehettem úgy 10 éves.
+                    A Debrecen felé tartó vonaton néztem a végtelen hosszú egyenes utat, az olykor fel-feltűnő
+                    gémeskutakat, a felhők játékát az égen, és
+                    a szívem megtelt izgalommal és kíváncsisággal: <em>„Mi
+                        van ott, azon túl, amit nem tud az agyam, az érzékeim felfogni? Mi fog ott várni rám, ha végre
+                        megláthatom?”</em></p>
+            </div>
+        </section>
+
+        <!-- Történet 2 -->
+        <section class="story">
+            <h2><span class="number">2.</span> “Nincs ott sëmmi!” /Ohatpuszta-kócs/</h2>
+            <div class="short-text">
+                <p>Már úgy 5. vagy 6. osztályos lehettem, amikor először láthattam élőben a pusztaságot. Na de azt
+                    is,hogy?</p>
+            </div>
+            <p><a href="javascript:void(0);" onclick="toggleText(this)">Tovább olvasom...</a></p>
+            <div class="full-text">
+                <p>Már úgy 5. vagy 6. osztályos lehettem, amikor először láthattam élőben a pusztaságot. Nagyon büszke
+                    voltam ám magamra, hogy már <strong>„felsős”</strong> vagyok, meg minden. Az akkor még hullámos
+                    gesztenyebarna hajam két copfban hordtam,
+                    és persze én is szenvedtem, mint minden kamasz a kamaszságtól, annak minden bajától. Hogy ugye,
+                    miért nem vagyok magasabb, hogy áll az orrom, miért nem hosszabb a szempillám és társai.</p>
+
+                <p>Az osztályban lévő lányok, gyerekként úgy gondoltam, helyesebbek nálam, ők meg lehet pont rólam
+                    gondolták ugyanezt, de én ezt akkor nem tudtam.</p>
+
+                <p>Vasárnap reggel volt, apám azt mondta, menjünk el Ohatra kismalacot venni. <strong>Ohat!</strong> Úr
+                    Isten! Végre apám elvisz magával valahova, ami a falun kívül van! Jaj, annyira boldog voltam!
+                    Gyorsan felöltöztem, de indulás előtt még
+                    segítenem kellett az állatok körül, kukoricát adtam a tyúkoknak és vizet, mert ez hozzátartozott a
+                    mindennapokhoz.</p>
+
+                <p>Anyu tett ennivalót az útra, a kockás szakajtóba beletette a kenyeret, sülthúst, a kést,
+                    összehajtotta a kendő négy sarkát, beletette apám táskájába a vízzel meg 2 almával együtt, aztán a
+                    gátoldalon kibicikliztünk a bekötő útra, arrafelé,
+                    ahol a temető, a Csukás és a hodályok is voltak.
+                </p>
+
+                <p>Akkor persze nem tudtam többet ezekről, csak annyit, hogy a Csukás az Csukás, még ott akkor nem
+                    jártam, a hodályról meg annyit, hogy teheneket tartottak benne, és egyszer én is ültem bent a földön
+                    a szalmán, aztán valaki felültetett egy
+                    lóra, de lefelé nézve igen erős tériszonyom volt már akkor is, pedig a ló közel sem olyan magas,
+                    mint mondjuk a Pilátus hegy, Svájcban.</p>
+
+                <p>Na szóval felültünk a biciklire és átmentünk Ohatra. Ami akkor még Ohat volt, de lehet úgy kéne
+                    helyesen írni, hogy Óhat-Pusztakócs, vagy mindet külön kötőjellel, ezt már nem tudom. Mindenesetre
+                    az, hogy Ohat, ez így igen értelmetlen volt
+                    az én szememben, mert akkor miért nem Óhajt, annak tudtam volna a jelentését, mert az Ohatnak nincs,
+                    na és a Kócsnak se.</p>
+
+                <p>Szóval az én fejemben sehogyse állt össze ennek a falunak a neve, és erősen törtem is a megfejtésen.
+                    Persze valójában Kócsra mentünk, ez is egyik tréfája volt apámnak. Kérdeztem is, hogy pontosan akkor
+                    hova is megyünk, mert sejtettem,
+                    hogy akkor most jött el az én időm, a Hortobágy kapuján túlra mehetek végre, érdekelt is engem, hogy
+                    mennyit kell biciklizni á, dehogyis, és az se érdekelt, hogy kis malacot kell nézni, csak menjünk!
+                </p>
+
+                <p>Kérdeztem apámat, hogy mi van ott? A szívem közben egyre hevesebben kezdett dobogni az új
+                    felfedezésem izgalmától, hogy mit fogok hallani, na és persze mit fogok ott látni végre!</p>
+
+                <p><em>– Nincs ott sëmmi kisjányom!</em> – felelt apám öblös hangján szárazon, a keveset beszélő falusi
+                    emberek szűkszavúságával. Apám magas, nagydarab ember volt, nehéz fizikai munkához szokott keze
+                    nagyon jellegzetes volt, mindig felgombolt
+                    ingben járt, munkásruhában legtöbbször. Mert neki a Hortobágy, a puszta egy megszokott dolog volt,
+                    nem látott benne <em>„sëmmit”</em>, csak egy utat ahhoz, hogy eljusson a munkába.</p>
+
+                <p><em>– Hogy hogy sëmmi?</em> – Kicsinek is én kérdeztem a legtöbbet, mindig, mindenre magyarázatot
+                    akartam, és persze azonnal. Olthatatlan volt a kíváncsiságom minden irányba. Egyszerűen mindent
+                    tudni akartam!</p>
+
+                <p><em>– Hogy hogy seëmmi?!</em> – kérdeztem megrökönyödve apámtól, előre kiabálva a bicikliről.</p>
+
+                <p><em>– Hát úgy, hogy sëmmi! Csak fű!</em> – mondja nevetve apám, és kacsint egyet a bal szemével.
+                    Sokat évődött velem, sose tudtam mikor mondja komolyan amit mond, mert én mindent komolyan vettem,
+                    aztán ő persze úgy nevetett, hogy hát csak
+                    viccelt. Én meg elvörösödtem dühömben és zavaromban ilyenkor.
+                </p>
+
+                <p><em>– Mondhatja nekem, úgyse hiszem el, amíg nem látom!</em> – gondoltam, – mert visszaszólni
+                    minálunk nem volt szokás.</p>
+
+                <p>Átvágtunk a bekötő úton, melynek a bal oldalán volt a tanya a nagy kuvasz kutyával, addig ezt se
+                    láttam. Nem volt megkötve, szaladt is utánunk, én meg egyre gyorsabban tekertem, mindig féltem a
+                    nagykutyáktól, de apám rúgott hátra egyet,
+                    aztán a kutya meghátrált.</p>
+
+                <p>Ekkor értünk ki végre a <strong>„nagyútra”</strong> – az, hogy 33-asnak hívják a valóságban, majd
+                    csak jóval később tudtam meg már szinte felnőtt fejjel, mert én Debrecenbe is csak vonattal jártam
+                    mamámhoz.
+                </p>
+
+                <p>És akkor ott volt, ott volt az egész pusztaság, hogy bármelyik irányba néztem mindenhol egyforma sima
+                    volt, hogy bárhol is álltam volna meg ebben a hatalmas pusztában, ebben a nagy semmiben, szinte
+                    mindig ugyanazt láttam volna – a lápi
+                    madarak fészkeit a mocsaras területeken, a vadlibák vonulását az égbolton nyílszerűen, a tehéncsorda
+                    legelését, a birkák ütemes bégetését a Fekete tanyán, egy-két gémeskutat, aztán bentebb a Meggyes
+                    csárdát, és még mi mindent!</p>
+
+                <p>Most végre itt voltunk, itt a Hortobágy kapujában, ebben a végeláthatatlan <em>„sëmmiben”</em> –
+                    aminek apám nevezte. De én akkor is úgy éreztem, hogy végre, végre sikerült elérnem a célom!
+                    Kipirulva, porosan, szomjasan de boldogan fordultam
+                    be apámmal a Kaparó csárdába.</p>
+
+                <p>Na ebben a híres csárdában dolgozott az egyik komája, akié akkor a csárda volt, mert apámnak sok
+                    komája volt, vagy mondhatnánk azt is, hogy mindenki a komája volt. Ezt az embert úgy emlékszem úgy
+                    hívták, hogy Virág Pál a kocsmáros, vagy
+                    ahogy később a faluban mondták, Virágpali’, mert később a falusi kocsmát is ő vezette.</p>
+            </div>
+        </section>
+
+        <!-- Történet 3 -->
+        <section class="story">
+            <h2><span class="number">3.</span> “Gyere kisjányom, veszek neked bambit!” /A Kaparó Csárda/</h2>
+            <div class="short-text">
+                <p>A faluban kevés húst vettek abban az időben, mert mindenki tartott állatot otthon.</p>
+            </div>
+            <p><a href="javascript:void(0);" onclick="toggleText(this)">Tovább olvasom...</a></p>
+            <div class="full-text">
+                <p>
+                    <!DOCTYPE html>
+                    <html lang="hu">
+
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Emlékek a faluról</title>
+                    </head>
+
+                    <body>
+
+                        <p>A faluban kevés húst vettek abban az időben, mert mindenki tartott állatot otthon. Sertést,
+                            marhát, mindenféle lábasjószágokat és hát volt olyan is, akinek még pulykája is volt. A
+                            pulyka az én szememben egy igen szürreális állatnak
+                            tűnt, gyerekfejjel el se tudtam képzelni, hogy egy madár hogy nézhet ki így.</p>
+
+                        <p>Na meg aztán az egyik osztálytársamnál láttam először pávát, fel nem fogtam, hogy lehet
+                            valaki a faluban, akinek ilyen gyönyörűség van az udvarán. Annyira büszke voltam rá. Jó
+                            szívű volt, adott nekem páva tollat, amit nagy becsben
+                            tartottam, évekig őrizgettem, még a kollégiumba is magammal vittem, annyira elvarázsolt
+                            engem ez a toll.</p>
+
+                        <p>Minálunk általában 5-6 disznótor volt, nagy volt a család, enni pedig kellett. Ha nem is
+                            ilyen sokszor, de karácsony előtt szinte minden háznál disznót vágtak, ami kitartott késő
+                            tavaszig. Ahhoz pedig, hogy télen lehessen disznót
+                            vágni, kellett, hogy legyen alapanyag. Ilyenkor apám körbejárta a falut, vagy ha nem,
+                            valamelyik komája szólt neki, hol van kismalac, amit majd felhizlal.</p>
+
+                        <p>Akkor épp nem volt senkinek gondolom a faluban, így mentünk át Kócsra. Emlékeimben ez a Kócs
+                            sokkal kisebb volt, mint a mi falunk, ahol egyszer még eltévedni is majdnem képes voltam a
+                            húgommal, még jó, hogy minden faluban van templomtorony,
+                            mert csak az mentett meg minket a kóborlástól. De erről majd később.</p>
+
+                        <p>Szóval itt egy hosszú utca volt mindössze, én legalábbis csak egyre emlékszem, meg még talán
+                            egy-két nagyobb épület, azok nem tudom mik lehettek. Talán ezekben őrizhették a foglyokat a
+                            pribékek? Na persze, a szó jelentését nem
+                            ismertem, csak annyit tudtam, hogy az egyik tanárt a faluban pribéknek mondtuk, pedig nem ez
+                            volt a neve, és nem is őrzött foglyokat.</p>
+
+                        <p>Gyerekként fogalmam se volt arról, hogy itt volt a kitelepítés, a hortobágyi gulág, mert
+                            ezekről az évekről az én szüleim sose beszéltek, csak ők tudták, hogy miért nem. Már
+                            nagyobbak lehettünk, amikor pár elejtett mondatot csíptem
+                            el, amit egymás közt mondtak halkan, hogy volt itt a faluban is valamiféle ellenállás, meg
+                            akkor beszéltek arról, hogy
+                            <em>„ellenforradalom”</em>, hogy valahol hogyan hurcoltak el embereket abban az időben, és
+                            volt lincselés.
+                        </p>
+
+                        <p>Erről a szóról nekem akkor csak a lencse jutott az eszembe, mert ahhoz hasonlított, de az
+                            meg, hogy lencselés, az meg olyan fura, nem? Kint ültünk a konyhában, én csak figyeltem, de
+                            ezeket olyan döbbenettel a hangjukban mondták,
+                            hogy csak azt éreztem, hogy valami olyan lehet, ami nagyon rossz.</p>
+
+                        <p>Az a pár tucat ember, aki itt lakott Kócson, aki megmaradt, csak az tudja, élte át és
+                            láthatta, mit tettek azok ellen az emberek ellen, akik ide kényszerítették őket, és mit
+                            tettek velük azok a pribékek, akik <em>„felügyelték”</em> őket.</p>
+
+                        <p>Apám mindig határozott ember volt, úgy gondolom, nagyon erős, mindig tudta, hogy mit akar.
+                            Most is így volt. A ház, ahol megálltunk, semmiben nem különbözött a többitől, a gazda kezet
+                            fogott apámmal – kérges tenyerű, barázdált
+                            arcú ember volt, tömött bajszú, de gondosan megborotvált arcú, mert a falusi emberek
+                            valahogy az emlékeimben sose voltak borostásak, ez olyan szokásféle lehetett a férfiaknál,
+                            minthogy Pitralonnal mind bekente az arcát borotválkozás
+                            után, annak meg ugye emlékszünk a fertelmes szagára.</p>
+
+                        <p>Olyan ember lehetett, mint az öreg Czinege Mihály bátyám, aki az utcánkban lakott, volt már
+                            vagy kilencven éves is, aki az emlékeimben mindig a birkákat legeltette a lapos tájékán, és
+                            neki gyönyörű hófehér tömött bajsza volt felkanyarítva,
+                            de az arca pirospozsgás és tükörsima volt neki is. A haja is hófehér volt, ha lehet azt
+                            mondani, Mihály bátyám egy nagyon szép öregember volt. Ahogy bandukolt a fokosával a birkák
+                            után, fülembe cseng a danolása:</p>
+
+                        <blockquote>
+                            <p><em>„A Vidróczki híres nyája, csörög, morog a Mátrába,<br>
+                                    Csörög, morog a Mátrába, mert Vidróczkit nem találja!”</em></p>
+                        </blockquote>
+
+                        <p>Mi kisgyerekek meg mentünk utána, mert szerettük az öreget és a történeteit hallgattuk
+                            naphosszat.
+                        </p>
+
+                        <p>Na ez a kócsi ember az akkor divatos jambóval a fején, gumicsizmában állt a kapujában és
+                            betessékelt bennünket, hátra vitt a malac ólhoz, ami engem igazán nem érdekelt. Úgy
+                            emlékszem, megállapodtak, hogy apám megveszi mind az ötöt,
+                            már 6 hetes malacok voltak, tehát el lehetett választani az anyjuktól. Úgy mondták
+                            <em>„választási malac”</em> – ezt a szót, ebben a formában csak sokkal később tudtam
+                            összerakni a fejemben, mert nekem csak kismalac és nagy
+                            malac volt benne.
+                        </p>
+
+                        <p>Apám már kifelé jövet arról beszélt, hogy mikor lesz belőle akkora, hogy le lehessen vágni.
+                            Ekkor haragudtam rá, mert már előre sajnáltam szegény kismalacokat, akiknek máris
+                            megpecsételődött a sorsa. De apám elégedett volt, jó
+                            üzletet kötött, azt mondta: <em>„szép
+                                kismalacok”</em>.</p>
+
+                        <p><em>– Gyere kisjányom, veszek neked bambit!</em></p>
+
+                        <p>Felültünk a biciklire, és megálltunk a Kaparó előtt. A csárda az emlékeimben tájjellegű
+                            bútorokkal volt berendezve, a falakon kerámiákkal, a söntés valami apacarácsszerű
+                            lamberiával elválasztva, és a hátsó polcokon sorakoztak a
+                            cigaretták sorban: Filtol, Sophyanne, Fecske, Munkás volt kirakva és cukorkák: Francia
+                            drazsé, Dunakavics, Tavaszi drazsé, Melba kocka, Tibi csoki és hasonlók.</p>
+
+                        <p>Apámnak minden üdítő, amit akkor árultak, egyszerűen csak <em>„bambi”</em> volt, mindegy,
+                            hogy Coca-Cola, szénsavas narancs, Pepsi-Cola, vagy Meggy márka vagy Traubiszóda volt.
+                            Úgyhogy vagy szőke kólát, vagy barna kólát vett nekem
+                            mindig. Az erős szénsav marta a torkomat és még az orromon is visszajött, de bántam is én,
+                            akkor is megittam. A <em>„barna
+                                kóla”</em>, az meg olyan Fagifor ízű volt, hogy alig bírtam lenyelni, egyáltalán nem
+                            értettem, hogy ebben mi a jó, de legyűrtem.</p>
+
+                        <p>A Kaparó az egyetlen hely volt a faluból kivezető úton, ahová Debrecen felé vagy Füred felé
+                            menet megállhatott az átutazó, és mint ilyen, központi helye is volt az emberek
+                            találkozóinak. Betérve itt beszélték meg a világ dolgait,
+                            a gazdasággal, az állataikkal, a családdal, a betegségekkel kapcsolatban, hogy ki van
+                            kórházban, kinek született gyereke és hasonlók.
+                        </p>
+
+                        <p>Mert akkor még nem volt közösségi média, tehát a kocsma volt a feszbuk elődje, csak itt
+                            egymással beszélgettek szemtől szemben. A kocsmáros ezért kitüntetett szereplő lehetett,
+                            hiszen amit beszéltek ott, mindent hallhatott, ezért
+                            mindenről tudott. Hogy kinek hasas a malaca, hány tehenet tudott venni, hogy áll a vetés a
+                            földeken, mikor lesz birkanyírás a tanyán, a libatelepen épp milyen betegség ütötte fel a
+                            fejét a libáknál, kit hirdetett ki a pap a
+                            faluban, ki megy férjhez, vagy épp ki halt meg és sok hasonló történet.</p>
+
+                        <p>Dehogyis tudtak az emberek arról, mi van a világ másik felén túl, nem is érdekelt senkit,
+                            mert mindenki el volt foglalva a maga bajával. És ez, jól is volt így! Nagyon is jól!</p>
+
+                        <p>A csoki, mert azt is mindig vett nekem apám, a kedvencem volt, bár a gyerek minden édességet
+                            szeret, Kokos’ - tej tábla csoki kókusz töltelékkel, és bambi, ez így ebéd gyanánt nekem
+                            pont megfelelt.</p>
+
+                        <p>Virág Pali az emlékeimben 40-es éveiben járó, átlagos testalkatú, hosszú nyakú, őszes barna
+                            hajú, szúrós szemű ember volt, hegyes állal. A haja oldalra volt fésülve. Úgy emlékszem,
+                            kissé ragacsos haja volt, talán valami olajjal
+                            lehetett bekenve.</p>
+
+                        <p><em>– Jó napot, Miklós bátyám!</em> – fogadta apám köszöntését! <em>– Merre jártak?</em></p>
+
+                        <p>Apám elmondta neki, hogy malacot vett, amit majd egyik komájával fog hazahozatni pár nap
+                            múlva utánfutóval. Én közben csak hallgattam a szót, mert a gyerek nem beszél, ha az emberek
+                            beszélnek. Hallottam, amint arról diskuráltak,
+                            hogy jönnek a faluba valami tévések, és valami filmet forgatnak majd.</p>
+
+                        <p>Ennek hallatára engem teljes izgalom fogott el és kikerekedett a szemem, mert a falu szélén
+                            mi is sokat játszottunk énekesest, meg előadtuk egymásnak az iskolában tanult verseket – azt
+                            játszottuk, hogy mi vagyunk az énekesek, Kovács
+                            Kati, Katona Klári, és a
+                            <em>„laposban”</em>, ami a mi véget nem érő színpadunk volt, fel-alá járkáltunk és egy
+                            morzsolt kukoricacsövet fogtunk a kezünkbe mikrofon gyanánt és énekeltünk telitorkoból, mert
+                            ott, a határban, a faluvégén, ez senkit nem
+                            zavart.
+                        </p>
+
+                        <p>Meg aztán, amúgy se fért a fejembe sokáig az, hogy tv, hogy hogy a ménkűbe tud olyan kicsi
+                            lenni a bemondó Takács Marika a bokrétás fehérblúzában, a fekete mellényével és a
+                            feltupírozott szőkehajával, hogy belefér abba a kisdobozba.
+                            Meg, hogy mi az a filmforgatás, ez annyira izgalmas volt nekem, hogy akkor éjjel még aludni
+                            se bírtam.</p>
+
+                </p>
+            </div>
+        </section>
+
+        <!-- Történet 4 -->
+        <section class="story">
+            <h2><span class="number">4.</span> "Ménes, indul!” Djokó</h2>
+            <div class="short-text">
+                <p>5. osztályos voltam, amikor híre ment a faluban, hogy jönnek a tévések és filmet forgatnak. Az egész
+                    falut átjárta a várakozás izgalma, mindenhol erről beszéltek</p>
+            </div>
+            <p><a href="javascript:void(0);" onclick="toggleText(this)">Tovább olvasom...</a></p>
+            <div class="full-text">
+                <p>5. osztályos voltam, amikor híre ment a faluban, hogy jönnek a tévések és filmet forgatnak. Az egész
+                    falut átjárta a várakozás izgalma, mindenhol erről beszéltek, a kis boltban, a kocsmában, a
+                    vasárnapi mise után kijőve a templomból, az
+                    orvosi rendelőben Juhász doktor várótermében, ahol az orvosi mérleg és a jellegzetes magasságmérő
+                    kint volt, és hát én a szorongásom leküzdésére azt játszottam, hogy ráálltam, tologattam a súlyt,
+                    aztán leszálltam és újra megmértem
+                    magam.</p>
+
+                <p>Apám azt mondta, üljek vissza a helyemre, ne rosszalkodjak, mert mindjárt kijön a doktor és le fog
+                    szidni. <em>– Nyisd ki a szád, kislányom! Mondd, Ááá!</em> – szólt rám Juhász doktor, aki az én
+                    szememben hatalmas embernek tűnt, nagy kerek
+                    arccal, sűrű göndör sötét hajjal, a fehér köpenye épphogy átérte. Ő mindent tudott, még fogat húzni
+                    is. Húsos keze, amikor hozzáért az arcomhoz, úgy éreztem, megsemmisülök tőle, annyira féltem. De a
+                    fogam fájt, hát még az injekció.
+                    Így nem volt mit tenni – elővette a vesetál formájú tartóból a jéghideg foghúzó szerszámát,
+                    felemelte, két ujja közé szorította az arcom, én eközben úgy éreztem, hogy itt a vég! Ha elől nem
+                    ment neki, akkor oldalt mögém állt – <em>„Jöjjön csak Mancika! Fogja meg a fejét!”</em> Az erős
+                    rántás hatása az egész fejemben körbeért, aztán egy nagy vattás gézdarab. <em>„Harapj rá
+                        erősen!”</em> – szólt rám – kedves akart lenni, jól hátba is veregetett, de hát nekem inkább egy
+                    szörny volt ezután, ahogy kifelé oldalaztam
+                    a feldagadt arcommal.</p>
+
+                <p>Felsőben mi a földrajz-biológia termet kaptuk meg, ami a folyosó végén volt a tanári szoba és az
+                    igazgató mellett. Tölgyesné, egy megszállott biológia tanár, inkább férfinak tűnt a szememben, mint
+                    nőnek, talán azért, mert mindent gyűjtött,
+                    ami a természetben előfordult: lárvák, tücskök, bogarak, preparált állatok, sikló levedlett ruhája,
+                    és még ki tudja miket. Ezek aztán egy egész falat betöltő vitrinben álltak, de a csontváz Samu az
+                    már nem fért be, így kint álldogált
+                    szerencsétlen a vitrin előtt.
+                </p>
+
+                <p>Én a 4. pad sorban ültem az ablak közelében, ami a parókiára nézett, mögötte a templom. A templom,
+                    aminek olyan jellegzetes szaga volt, meg kis angyalkák a falakon, meg a Jézus, ahogy az oltár falán
+                    a magasba emeli a tekintetét, aztán
+                    baloldalt, ahogy a Mária tartja az ölében a szinte meztelen testet, amiből piros vér folyik, a
+                    nyikorgó padsorok, az ostya, amint a szájpadlásomhoz tapad és az ujjammal le kell onnan vakarni,
+                    pedig nem volna szabad. <em>„Isten báránya, te aki elveszed a világ
+                        bűneit, irgalmazz nekünk!”</em> Na jó, de ezen nem lehetett nevetni a hittanórán, meg a misén
+                    se! De azon, hogy <em>„Isten birkája!”</em> – no, azon mi csak fulladoztunk a nevetéstől, bántuk is,
+                    hogy a falubéli öreg asszonyok,
+                    hogy sisegnek ránk! Hisz gyerekek voltunk.</p>
+
+                <p>A téli szünet előtti utolsó nap volt, az igazgató bejött és ekkor jelentette be, hogy
+                    gyerekstatisztákat keresnek a készülő filmhez. Na! Most jött el az én időm! A szívem a torkomban
+                    dobogott, statiszta lehetek egy igazi filmben! Ugyan,
+                    ki ne lenne izgatott. A mi kis gyerekszínházunk ott a falu szélén, semmi volt ehhez képest. Igazi
+                    rendező, filmfelvevő, valódi színészek! Az a kis csengő, ami mindig is ott csilingelt a fejemben,
+                    most is megszólalt! Jelentkeztem, és
+                    felvettek! A legjobb az volt, hogy azokon a napokon iskolába se kellett menni és még pénzt is adtak.
+                    Így alakult, hogy 10 évesen már fizetésem is volt. Ó, de boldog voltam!</p>
+
+                <p>Január volt, már elkezdődött az iskola, és megtelt a kultúrház a mozi mellett. Én a húgommal mentem,
+                    mert szerencsére őt is bevették statisztának. Az emberek arcán az igazgatottság keveredett a
+                    kíváncsisággal látva a ruhákat, amiket föl
+                    kellett venniük, mert mindenki parasztot játszott, a gazdag is, és a szegény is. Na meg azért
+                    mindenki nagyon büszke volt, hogy pont itt, minálunk, ebben a faluban filmet fognak csinálni.</p>
+
+                <p>A próba alatt én annyit nevettem, hogy még a könnyem is kicsordult, a széles buggyos gatyákon, a
+                    belyár ingeken, a nagykarimájú zsíros kalapokon, az asszonyok húzott szoknyáján, mert olyan murisak
+                    voltak ezekben a ruhákban. Akkor el is
+                    gondolkodtam azon, hogy a ruha mennyire más embernek tud mutatni valakit. <em>– Maga ott! Legyen
+                        szíves vegye le a gyűrűjét és az aranykarkötőt, ez a film az
+                        1830-as években játszódik, akkor ilyen ékszereket nem hordtak a paraszt asszonyok! Rúzs és lakk
+                        se lehet!</em> – mondta a nő, ellentmondást nem tűrően. Akire rászólt egy dauerolt vörös hajú
+                    asszony volt, olyan madám féle, kirúzsozott szájjal, lakkozott körmökkel. A nő bár nem vette jó
+                    néven, megtette amire kérték, hiszen
+                    minden vágya volt szerepelni filmben és a főpróbán.</p>
+
+                <p>A nap vakítóban sütött a hófödte főutcán, a csizmánk alatt csak úgy ropogott, ahogy bandukoltunk a
+                    kis húgommal, akinek egy nagy kendővel volt bebugyolálva a feje, valami bekecsfélét adtak rá és
+                    hosszú vastag szoknyát. A várakozás izgalmától
+                    kipirulva értünk el a Templomnál lekanyarodva a Kismező utcából a tett színhelyére. Nyavalyka, így
+                    mondták azt a részt a faluban, de hogy mi miatt volt az, azt sehogyse értettem. Mert hát annyit
+                    tudtam, hogy a nyavalya, az rossz, a
+                    nyavalyka az meg olyan kedveskedő szó, mintha kicsi rossz lenne. Ennek a szónak a falubeli
+                    jelentését sose tudtam megfejteni, de érdekes volt nekem, hogy mindenre volt egy nagyon jellegzetes
+                    szó, ami teljesen megmagyarázta az adott
+                    embernek a jellemét, a külsejét, vagy valaminek a kinézetét. Ezért volt az, hogy soknak nem a valódi
+                    nevét kellett használni, hanem amit adtak neki, a ragadványnevét. Itt most tekintsünk el a nevek
+                    említésétől, talán majd egyszer.</p>
+
+                <p>Ekkor már nagyon sok paraszt várta a jelenését, mindenhol tévések, sátrak, filmfelvevők, több tucat
+                    idegen ember, akiket még sosem láttunk, mindenféle utasításokat adtak nekünk az egyszerű
+                    parasztoknak, és mi mindannyian igyekeztünk, hogy
+                    a legjobbat nyújtsuk az alakításhoz, hiszen akkor mindenki azt gondolta, hogy ő most egy igazi
+                    színész és élete nagy filmjét játssza. Ami valóban az is lehetett, hiszen olyan nevek voltak benne,
+                    mint Ragályi Elemér, Bujtor István,
+                    Djoko Rosic, Bordán Irén, hogy csak párat említsek. Ez a film, mint utóbb megtudtuk, <strong>„A
+                        talpuk alatt
+                        fütyül a szél”</strong> címet kapta, bár volt olyan verzió is, hogy az lesz a címe:
+                    <em>„Végelbánás”</em>. Szerintem jól döntött a rendező Szomjas György, hogy nem ennél maradt, mert
+                    az milyen már, hogy <em>„Végelbánás”?</em>
+                </p>
+
+                <p>Nekünk akkor annyira természetes volt, hogy ezek között a nagy óriások között járkálhattunk, igazából
+                    fel se fogtunk, hogy miben is veszünk részt. A dolgunk annyi volt, hogy fel-alá kellett járkálni,
+                    meg a sáros hóban rögöket kellett gyűjteni
+                    fonott kosarakban, aztán pedig amikor jöttek a betyárok és csattogtatták az ostort a ménest hajtva,
+                    és lövöldöztek egymásra, akkor betereltek minket a kordélyok mögé, és jajgatni kellett meg sírni és
+                    közben sült tököt kellett enni,
+                    amikor mondták. Na de a gyereknek a sírás, az nem megy parancsszóra, sőt! Sőt, mi inkább nevettünk,
+                    mert hát nem volt szabad.
+                </p>
+
+                <p>Djoko hatalmas karvalyorrú ember volt, mélyen ülő szemei szinte alig látszottak erős arccsontjától, a
+                    haja csapzott hosszú fekete, tömött hosszú bajsza kikanyarítva, arca cserzett a naptól. Aki látta
+                    ezt az embert, ezt a színészt, szerintem
+                    sose felejtette el. Széles szárú bő gatyája, vastag 3 Csatos bőrszíj, benne a pisztoly, rámás
+                    csizma. Mint évekkel később megtudtam, ez a film volt az egyetlen amolyan keleti western, amit
+                    kishazánkban forgattak 1976-ban, úgyhogy valódi
+                    kuriózumnak számíthat.
+                </p>
+
+                <p>A falu határában messze elhallatszott a <em>„Pesti”</em> tévések zaja, ahogy a hangosbemondóban adták
+                    az utasításokat: <em>„Csapó 156. jelenet! Ménes indul!”</em> – harsogta a rendező segédje. A lovak
+                    prüszkölése, a ménes eszeveszett vágtázása,
+                    a hangos csettintések, a karikás ostor pattogása, a kutyák csaholása, ahogy a lovak után erednek a
+                    kemény hóban, a színészek, amint várnak a saját jelenetükre miközben füstöt eregetnek, a sminkes,
+                    aki a hidegtől átfagyott arcra megpróbál
+                    púdert pamacsolni. Ahogyan ebből a sűrű egyvelegből, ebből a hatalmas forgatagból a végén egy
+                    történet lesz. Az addig csendes kisfalu, ott a hortobágyi nagy pusztaságban, a januári hideg ködös,
+                    nyirkos zúzmarában megtelt élettel, megtelt
+                    játékkal, történelemmel, és tartalommal. Az emberek belehelyezték magukat a régi világba, a
+                    betyárvilág és a csendbiztos szemet-szemért, fogat-fogért világába, amikor az állat, az életet
+                    jelentette, és a kártevőt el kellett fogni,
+                    mégha heteket is kellett lovagolni utána a pusztában. Bármennyit kellett fagyoskodni, nekem így is
+                    életem nagy élménye volt, hiába nem értettem akkor semmit az egészből.</p>
+
+                <p>A kis nyugtával a kezemben, amin rajta állt, hogy 4 nap statiszta kap 360 forintot, boldogan gyűrtem
+                    a zsebembe, már fejben el is költöttem Nebuló cukorra és rengeteg Melba szeletet vettem álmomban
+                    Juci néni Vegyesboltjában. Ahogy így
+                    andalogtunk hazafelé a 8 éves húgommal, ránk esteledett szinte, körbenéztünk, és elfogott minket a
+                    félelem, mert egy embert se láttunk és hirtelen azt sem tudtuk, hol vagyunk. Csak a templom híresen
+                    szép harangjának hangja volt az
+                    egyetlen, ami elvezetett minket ennek a csepp falunak a főutcájára, ahonnan már megnyugodva értünk a
+                    házunkhoz, ami nem olyan messze volt a Csukástól.</p>
+
+                <p>A Csukás 6. nyarán a második nyári munkahelyem volt Kapás Józsi bátyámnál, vagy ahogy a faluban
+                    mondták: Kapásnál. Azon a nyáron nagyon büszke voltam magamra, mert én akkor ott annyi pénzt
+                    kerestem, hogy el se hinnék. Na jó, nekem soknak
+                    számított.</p>
+            </div>
+        </section>
+
+        <!-- Történet 5 -->
+        <section class="story">
+            <h2><span class="number">5.</span> Ezentúl a Te neved a keresztségben: Mária! /A bérmálkozás/</h2>
+            <div class="short-text">
+                <p>A tavaszi napsütés első sugarai beterítették az udvart, gyenge szellő járta át a hengerezett falú
+                    házat, a nyitott ablakon érezhető volt a föld szaga, az épp hogy csak éledező természet megújulni
+                    akarása.
+                </p>
+            </div>
+            <p><a href="javascript:void(0);" onclick="toggleText(this)">Tovább olvasom...</a></p>
+            <div class="full-text">
+                <p>A tavaszi napsütés első sugarai beterítették az udvart, gyenge szellő járta át a hengerezett falú
+                    házat, a nyitott ablakon érezhető volt a föld szaga, az épp hogy csak éledező természet megújulni
+                    akarása. Volt ebben valami lágy könnyedség,
+                    valami frissesség, amikor a sötétséget felváltja a fény, amikor a szürkeség átadja a helyét a
+                    világosságnak.</p>
+
+                <p>A hátsó udvarból behallatszik az állatok szokásos reggeli zenéje, ahogy a malacok egymást akarják
+                    lekörözni az ennivalóért, ahogy az istállóban a tehenek jóízűen lakmároznak, olykor elégedetten
+                    bőgnek egyet, és mindez keveredik a kakas
+                    rettentő hangos kukorékolásával az udvar közepén, mert a tyúkoknak tudniuk kell a helyüket. Apám épp
+                    kukoricát szór eléjük, ők pedig rárohannak.</p>
+
+                <p>A konyhából hallom, amint sistereg a zsír, keveredve a bundás kenyér semmivel össze nem téveszthető
+                    illatával, szinte láthatóan és hullámokban úszik a levegőben. Anyám épp a teát készíti a bundás
+                    kenyér mellé, a kancsóba belefacsarja a
+                    citromot, beleteszi a cukrot, nagyot kavar rajta, egy erős pezsgés és kész. Ma lesz a nagy napom,
+                    bérma keresztanyám elvisz a templomba, ahol bérmálkozni fogok, és a keresztségben a Mária nevet
+                    kapom.</p>
+
+                <p>Ebben az időben még nem divatos első áldozni, meg bérmálkozni, mert mindenki úttörő vagy kisdobos, és
+                    ez a kettő nem keveredhet. Valahogy ezek a templomi dolgok tiltottnak vagy megtűrtnek számítanak az
+                    emlékeimben. Oda bemenni kockázatos,
+                    mert kirekesztéssel, de legalábbis sanda tekintetek kíséretével jár, de bánom is én! Lenyűgöz engem
+                    az a templom, a maga monumentális nagyságával, ahogy kimagaslik az összes épület közül, ahogy
+                    felnézek a tornyára, szinte beleszédülök
+                    a látványába. Mi van ott belül, mit csinálnak ott az emberek?</p>
+
+                <p>Vasárnaponként gyakran láttam, ahogy a templomjáró asszonyok az imára hívó harangszóra a fekete
+                    ünneplőjükben, a kis fekete lakk ridiküljükkel a szemfelszedett harisnyájukban, némelyiknek néhány
+                    erős, hosszú szőr az állán – mert akkor
+                    még nem volt divat a gyantázás falun – álluk alatt gondosan megkötött fekete kendőben menetelnek a
+                    misére a lelki táplálékért, mert meg kell adni az Úrnak, és maguknak ami jár. Meg kell adni a
+                    csendet, meg kell adni a békességet, az
+                    önmagukba mélyedést, a bűnbánatot és a megbocsátást. Ezeket a dolgokat persze akkor még nem tudom,
+                    honnan is tudhatnám, hisz oktalan gyerek vagyok, de bérma keresztanyám tudta, ő tudta, de nem csak
+                    ezt, ő mindent tudott, ezért is nevelt
+                    engem a vallásra.</p>
+
+                <p>Ő mindent tudhatott a Jó Istenről, hisz öt árva gyereket nevelt fel, akik közül egy se volt az övé,
+                    mert mind a keresztapámé, akinek meghalt a felesége. Nagy áldozat lehetett ez, de ő mégse fogta föl
+                    annak. A hátsó konyhájában sokszor
+                    ülök a kis hokedlijén, ő pedig velem szemben mutatja nekem a különféle öltési módokat, mintákat, a
+                    csipkeveréstől, a dukkolásig. Van is, amit meg tudok tanulni, de balkezes vagyok, emiatt minden
+                    fordítva van a fejemben, így van amit
+                    nagyon könnyen megtanulok, de a csipkeverés feladja a leckét.</p>
+
+                <p>A csepp konyha falán a falvédőn, egy helyre menyecske fordul szembe az urával kék láncöltéses
+                    mintával kivarrva, körben cirádák, mely alatt egy nagy élet bölcsesség, kinyilatkoztatás áll:
+                    <em>„Az én uram csak a vizet issza, nem is sírom a lányságom vissza!”</em>. Ennél jobb tanács,
+                    útravaló mi kell egy süldő lánynak? Mellette a kis gázkályha palackkal, piros virágmintás ráncos
+                    huzattal betakarva, keresztanyám épp a
+                    szokásos rántottát süti keresztapámnak, aki kanyarít egy nagy szeletet a kenyérből és harapja a
+                    tojást. Mindennap ezt eszi reggelire, közben a Kalendárt bújja.
+                </p>
+
+                <p>Sok könyvük van a nagyházban, fent a polcon. Sok világirodalom remekei, jellegzetes szag árad végig a
+                    folyosón, az áporodott szag keveredik a könyvek dohos szagával, keveset szellőztetnek, de nekem
+                    valahogy mégis a mennyország szaga, mert
+                    a betűéhségem miatt, az összes könyvet ki fogom olvasni néhány hónapon belül. Persze ezt akkor ott
+                    még nem tudom.</p>
+
+                <p>Keresztanyám valahogy nagyon szerethetett engem, mert mindent meg akart tanítani nekem, én pedig
+                    mindent tudni akartam. Manci néném, ahogy mindenki szólította, alacsony és nagyon kövér asszony
+                    volt, valami különös betegsége folytán, rettentő
+                    kövérek a lábai, az arca kerek, de szürkés, savós szeme mindig mosolyog – a színes kendőt mindig
+                    hátra kötötte, mert a tésztadagasztás közben megizzadt a homloka, szinte látom, ahogy folyik lefelé
+                    az apró izzadságcsepp az arcán és
+                    a pilla nélküli szemhéján – és mindehhez a groteszk külsőhöz, valami fülsiketítő kedves bájos
+                    sipákolós fejhang társult. Engem ritkán szólít a nevemen, legtöbbször <em>„gyere csak
+                        kislyányom”</em> vagyok, és én boldogan teszek meg
+                    mindent, amit kér.</p>
+
+                <p>Bevásárolok, segítek a kertben, kikavarom a tojássárgáját a cukorral a házi fagyihoz, mert arra is
+                    megtanít. Apám sokszor hoz haza bíbictojást, meg fürjtojást, hát én abból annyi fagyit csinálok, nem
+                    győzzük megenni. És hát persze, az
+                    újonnan megszerzett tudományomra nagyon büszke vagyok. Sokat kutyulgatok a konyhában ezután, mert
+                    szeretek kísérletezni is az ízekkel. Meg aztán, mindent tudnom kell: csirke kopasztás, libatömés,
+                    piskóta sütés, na jó, tehenet fejni
+                    nem tudok, mert félek a tehéntől. Hát ez van.</p>
+
+                <p>Jani bátyám, a férje, az én bérma keresztapám, alacsony, őszes hajú, lassú beszédű ember, aki
+                    cigarettázás közben legtöbbször guggol, ez nem tudom milyen szokás nála, lehet ilyenkor elmélkedik
+                    magában valami műszaki dolog megoldásán, mert
+                    szinte hihetetlen módon ért a gépekhez, legyen az egy szerszám, egy motor, egy nád-szövetkészítő gép
+                    a Csukásban, vagy egy csirkekeltető, mert az is van nekik. Nem tudom honnan tud ennyit, de mindent
+                    meg tud szerelni. Abban a falusi
+                    világban valami kiszámíthatatlan módján a túlélésnek, az életösztönnek, apáról fiúra száll a tudás
+                    megszerzése és birtoklása, vagy már kódolva van, hiszen itt mindenki csak magára számíthat, ha élni
+                    akar. Keresztapám pedig élni akart,
+                    aki mindezt olyan természetesnek vette, és senkin nem kérte számon. Ha egy problémát meg akar
+                    oldani, akkor nem nyűglődik, vagy könyvből megtanulja, vagy a szomszéd megmutatja, hogyan kell. Ha
+                    lehet azt mondani, igazi polihisztor,
+                    meg ezermester, szeretik és tisztelik is emiatt.</p>
+
+                <p>A bérmálkozásom már azután van, hogy előáldoztam. Kapok egy szép fehér csipkeruhát, fehér harisnyát
+                    és fehér cipőt. Nagyon büszke vagyok magamra, csak állok a tükör előtt és nem győzök betelni a
+                    látvánnyal. A fejemen fátyol és közepén
+                    egy nagy fehér mirtuszvirág. Anyám nem szereti, ha a hajam belelóg a szemembe, ezért mindig magasra,
+                    a fejem közepére rakja a copfomat, amitől rettentő idétlennek érzem magam. Ezért a mirtuszvirág is
+                    olyan idétlen a fejemen szerintem.
+                    De hát kis menyasszony vagyok, és számomra ez a lényeg.</p>
+
+                <p>A fotón, ahogy a templom előtt állunk mi kismenyasszonyok a pappal, szépen összetett tenyérrel –
+                    ahogy nézem ezt a fotót, látom, hogy csak nekem nincs fehérkesztyűm. Belefacsarodik a szívem, hogy
+                    nekem miért nincs? – anyám elfelejtette.</p>
+
+                <p>Bérmálkozásomra nagyon szép mintás ruhát varrat nekem keresztanyám, mert akkor még divat ruhát
+                    varratni, még piskóta tekercset is süt. A szertartásból a templomban nem sokat fogok fel, felállok,
+                    ha szól a pap, mondom az imádságokat, kimegyek
+                    az ostyáért összekulcsolt kézzel, majd visszaülök keresztanyám mellé. Most már tudom, hogy a Mária
+                    nevet kaptam, keresztanyám adta nekem, nekem nem tetszik a név, én inkább Veronikát szerettem volna.
+                    <em>„Menjetek haza békével!”</em> – indítja útjukra a híveket a pap, aki nagyon elégedett, mert
+                    sokan bérmálkoztak. Nekem pedig így már két keresztanyám is van.
+                </p>
+
+                <p>De hazaérve a templomból, valami különös öröm járja át a szívem, nem tudom, mi történik velem, de úgy
+                    érzem, mintha valami nagy dolgot tettem volna, mintha átugrottam volna egy magas lécet, vagy mint
+                    amikor kaptam egy csillagot az ellenőrzőbe.
+                    Nem fogom föl, hogy mi a boldogság jelentése, nem tudom meghatározni, csak érzem. Keresztanyám
+                    elégedett, azt mondja, szépen beszélt a pap, és milyen sokan voltak! – ezek olyan megállapítások,
+                    amitől fontos, vagy kevésbé lesz fontos
+                    valami. Ha sokan voltak, akkor jó, ha nem, akkor biztos nem volt elég jó. Ezt nem tudom még így
+                    összerakni a fejemben, ahogy majszolom a piskótatekercset, amit direkt nekem sütött keresztanyám
+                    erre az alkalomra. Már a negyedénél járok,
+                    amikor megkérdezi szelíden: <em>„Kisjányom, nem viszel haza a
+                        testvéreidnek?”</em> – Ó, dehogyisnem! Hónom alá kapom a tekercset, és már szaladok is a szép új
+                    ruhámban hazafelé.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Lélekmorzsák - Minden jog fenntartva</p>
+    </footer>
+
+</body>
+
+</html>
